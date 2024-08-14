@@ -33,11 +33,11 @@ stages:
     - model_building.n_estimators
     - model_building.learning_rate
     outs:
-    - models/model.pkl
+    - models_saved/model.pkl
   model_evaluation:
     cmd: python src/models/model_evaluation.py
     deps:
-    - models/model.pkl
+    - models_saved/model.pkl
     - src/models/model_evaluation.py
     metrics:
     - reports/metrics.json
